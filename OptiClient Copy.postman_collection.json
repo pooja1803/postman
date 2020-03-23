@@ -1,0 +1,1774 @@
+{
+	"info": {
+		"_postman_id": "917f23df-eece-4a23-bd63-49d5974bc267",
+		"name": "OptiClient Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5f84aeee-c2cb-4f30-b2ef-e9efb25ca97b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Saurabh\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userCode",
+							"value": "R9224560",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userPassword",
+							"value": "Sept@2019",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userCode",
+							"value": "P8099488",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userPassword",
+							"value": "P@ssword@2020",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userCode",
+							"value": "S4208983",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userPassword",
+							"value": "SNK!T@2020",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userCode",
+							"value": "S4763270",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userPassword",
+							"value": "Shr@1234",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userCode",
+							"value": "s2593674",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userPassword",
+							"value": "sgIT@2020",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userCode",
+							"value": "s8502269",
+							"type": "text"
+						},
+						{
+							"key": "userPassword",
+							"value": "Pass!123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/login",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "userCode",
+							"value": "P8099488",
+							"disabled": true
+						},
+						{
+							"key": "userPassword",
+							"value": "Sg!t@2019",
+							"disabled": true
+						},
+						{
+							"key": "userCode",
+							"value": "S4208983",
+							"disabled": true
+						},
+						{
+							"key": "userPassword",
+							"value": "SNK!T@2019",
+							"disabled": true
+						},
+						{
+							"key": "test",
+							"value": "jdjdjj",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get builder agency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ce15296-0f08-439c-8614-a0b6dc6fe185",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"\");",
+							"});",
+							"",
+							"pm.test(\"Number included\", function(){",
+							"pm.expect([8671]).to.include(8671);",
+							"}",
+							");",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"   pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function(){",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.with.body;",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"var schema = {",
+							"\"properties\": {",
+							"    \"description\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"content\": {",
+							"      \"type\": \"array\",",
+							"      \"items\": [",
+							"        {",
+							"          \"type\": \"object\",",
+							"          \"properties\": {",
+							"            \"id\": {",
+							"              \"type\": \"integer\"",
+							"            },",
+							"            \"name\": {",
+							"              \"type\": \"string\"",
+							"            },",
+							"            \"builderName\": {",
+							"              \"type\": \"string\"",
+							"            },",
+							"            \"address\": {",
+							"              \"type\": \"string\"",
+							"            },",
+							"            \"cityId\": {",
+							"              \"type\": \"integer\"",
+							"            }",
+							"          },",
+							"          \"required\": [",
+							"            \"id\",",
+							"            \"name\",",
+							"            \"builderName\",",
+							"            \"address\",",
+							"            \"cityId\"",
+							"          ]",
+							"        }",
+							"      ]",
+							"    }",
+							"  },",
+							"  \"required\": [",
+							"    \"description\",",
+							"    \"content\"",
+							"  ]",
+							"};",
+							"var response = {",
+							"    \"description\" :",
+							"    [",
+							"        ",
+							"         {",
+							"            \"id\": \"106\",",
+							"            \"name\": \"124444\",",
+							"            \"builderName\": \"Builder Saint-Brieuc1\",",
+							"            \"address\": \"paris - france\",",
+							"            \"cityId\": \"8671\"",
+							"        }",
+							"        ]",
+							"};",
+							"",
+							"pm.test('Schema is valid', function() {",
+							"  pm.expect(tv4.validate(response,schema)).to.be.eql;",
+							"  console.log(\"Schema is valid\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"builder name is matched\", function(){",
+							"",
+							"let a= {",
+							"\"name\" : \"Builder Saint-Brieuc1\"",
+							"};",
+							"",
+							"let b= {",
+							"\"name\"  : \"Builder Saint-Brieuc1\"",
+							"};",
+							"",
+							"pm.expect(a).to.eql(b);",
+							"",
+							"});",
+							"",
+							"pm.test(\"status is bad request\", function () {",
+							"     pm.response.to.be.badRequest;",
+							"});",
+							"",
+							"pm.test(\"status is ok\", function(){",
+							"     pm.response.to.have.property('status','OK');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies?offset=0&limit=32",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"buildersagencies"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "promoteur",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "2B IMMOBILIER",
+							"disabled": true
+						},
+						{
+							"key": "zipcode",
+							"value": "02210",
+							"disabled": true
+						},
+						{
+							"key": "city",
+							"value": "Le Plessier-Huleu",
+							"disabled": true
+						},
+						{
+							"key": "contactName",
+							"value": "pooja jadhav",
+							"disabled": true
+						},
+						{
+							"key": "contactPhone",
+							"value": "1234456789",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "siret",
+							"value": "12345678900346",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "32"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "builderagenciesbyid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ea883aa-efc2-4342-9714-fcb26b94813f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"siren\");",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Agency 11\");",
+							"});",
+							"",
+							"//pm.test(\"Matches isRefrigerant property value\", () =>{",
+							" //   _ .each(pm.response.json(),(arrItem)=>{",
+							"   //     if (arrItem.onEcoTax === 'false'){",
+							"     //       throw new Error('Array contains ${arrItem.persID}')",
+							"       // }",
+							"    //})",
+							"//})",
+							"",
+							"pm.test(\"Check statusId equals to 8\", () =>{",
+							"    var jsonData = pm.response.json();",
+							"    for (i = 0; i < jsonData.content.length; i++){",
+							"        pm.expect(jsonData.content[i].statusId).to.equal('8');",
+							"    }",
+							"});",
+							"",
+							"//check if array is empty ",
+							"pm.test(\"Check if array is empty\", function () {",
+							"     expect([]).to.be.empty;",
+							"    });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "propositionId",
+							"value": "19",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies/106",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"buildersagencies",
+						"106"
+					],
+					"query": [
+						{
+							"key": "propositionId",
+							"value": "5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subcontractor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad4ab30c-390d-4114-8dab-5e2c7c11d488",
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							" var schema ={",
+							"    \"properties\":{",
+							"    \"description\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"content\": {",
+							"      \"type\": \"array\",",
+							"      \"items\": [",
+							"        {",
+							"          \"type\": \"object\",",
+							"          \"properties\": {",
+							"            \"id\": {",
+							"              \"type\": \"integer\"",
+							"            },",
+							"            \"name\": {",
+							"              \"type\": \"string\"",
+							"            },",
+							"            \"contact\": {",
+							"              \"type\": \"string\"",
+							"            },",
+							"            \"siren\": {",
+							"              \"type\": \"string\"",
+							"            },",
+							"            \"buildingCode\": {",
+							"              \"type\": \"null\"",
+							"            },",
+							"            \"address\": {",
+							"              \"type\": \"string\"",
+							"            },",
+							"            \"cityId\": {",
+							"              \"type\": \"integer\"",
+							"            }",
+							"          },",
+							"          \"required\": [",
+							"            \"id\",",
+							"            \"name\",",
+							"            \"contact\",",
+							"            \"siren\",",
+							"            \"buildingCode\",",
+							"            \"address\",",
+							"            \"cityId\"",
+							"          ]",
+							"        }",
+							"      ]",
+							"    }",
+							"  },",
+							"  \"required\": [",
+							"    \"description\",",
+							"    \"content\"",
+							"  ]",
+							"};",
+							"var response = {",
+							"    \"description\" :",
+							"    [",
+							"        ",
+							"         {",
+							"            \"id\": \"42\",",
+							"            \"name\": \"Company_testpp\",",
+							"            \"contact\": \"Rachana PI\",",
+							"            \"siren\": \"123456789\",",
+							"            \"buildingCode\": null,",
+							"            \"address\": \"address1\",",
+							"            \"cityId\": \"3047\"",
+							"        }",
+							"        ]",
+							"};",
+							"",
+							"pm.test('Schema is valid', function() {",
+							"  pm.expect(tv4.validate(response,schema)).to.be.eql;",
+							"  console.log(\"Schema is valid\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Success\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/subcontractors?offset=0&limit=10",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"subcontractors"
+					],
+					"query": [
+						{
+							"key": "speciality",
+							"value": "Ptest",
+							"disabled": true
+						},
+						{
+							"key": "zipcode",
+							"value": "02210",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Company_testpp",
+							"disabled": true
+						},
+						{
+							"key": "city",
+							"value": "Le Plessier-Huleu",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "propositionId",
+							"value": "108",
+							"disabled": true
+						},
+						{
+							"key": "contactName",
+							"value": "rachana pi",
+							"disabled": true
+						},
+						{
+							"key": "siret",
+							"value": "12345678900346",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subcontractorid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "849e3c16-35cc-4e45-ab84-a84ce1889fa0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//pm.test(\"Matches isRefrigerant property value\", () =>{",
+							" //   _ .each(pm.response.json(),(arrItem)=>{",
+							"   //     if (arrItem.onEcoTax === 'false'){",
+							"     //       throw new Error('Array contains ${arrItem.persID}')",
+							"       // }",
+							"    //})",
+							"//})",
+							"",
+							"pm.test(\"Check id equals to 42\", () =>{",
+							"    var jsonData = pm.response.json()",
+							"    for (i = 0; i < jsonData.content.length; i++){",
+							"        pm.expect(jsonData.content[i].statusId).to.equal('42');",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"Check function equals to Admin\", () =>{",
+							"    var jsonData = pm.response.json()",
+							"    for (i = 0; i < jsonData.content.length; i++){",
+							"        pm.expect(jsonData.content[i].statusId).to.equal('Admin');",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"Check cityId equals to 3047\", () =>{",
+							"    var jsonData = pm.response.json()",
+							"    for (i = 0; i < jsonData.content.length; i++){",
+							"        pm.expect(jsonData.content[i].cityId).to.equal('3047');",
+							"    }",
+							"});",
+							"",
+							"//check if array is empty",
+							"pm.test(\"Check if array is empty\", function () {",
+							"     expect([]).to.be.empty;",
+							"    });",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "propositionId",
+							"value": "hhhh",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/subcontractors/42",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"subcontractors",
+						"42"
+					],
+					"query": [
+						{
+							"key": "propositionId",
+							"value": "101",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update builder agencies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a195bd0c-6b74-4421-8413-359e7e000002",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"name\");",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"//const jsonData = JSON.parse(responsebody);",
+							"const usersURL = \"https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies/3954\";",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"//var usersURL = \"https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies/3954\"",
+							"tests[\"Gets the correct users url\"] = jsonData.current_user_url === usersURL",
+							"",
+							"tests[\"Body is not empty\"] = (responseBody!==null || responseBody.length!==0);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n  \"name\": \"TestBuilder_agency1\",\r\n  \"builderId\": 50,\r\n  \"builderName\": \"Builder_saint_bruic_1\",\r\n  \"statusId\": 1,\r\n  \"siren\": \"\",\r\n  \"buildingCode\": \"\",\r\n  \"address\": \"\",\r\n  \"cityId\": \"3047\",\r\n  \"type\": [\r\n    4\r\n  ]\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies/3954",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"buildersagencies",
+						"3954"
+					],
+					"query": [
+						{
+							"key": "builderAgencyId ",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update subcontractor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b6deded-0fdf-43aa-973e-f523588e5c8f",
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"speciality\");",
+							"});",
+							"",
+							"pm.test(\"statusId is correct\", function () {",
+							"    var statusId = pm.response.json();",
+							"    pm.expect(statusId.value).to.eql(8);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Subcontractor name is matched\", function(){",
+							"",
+							"let a= {",
+							"\"name\" : \"PP_testcomapny\"",
+							"};",
+							"",
+							"let b= {",
+							"\"name\"  : \"PP_testcomapny\"",
+							"};",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"name\": \"PP_testcomapny\",\r\n    \"statusId\": \"8\",\r\n    \"siren\": \"123456789\",\r\n    \"buildingCode\": null,\r\n    \"address\": \"Paris11\",\r\n    \"cityId\": \"14644\",\r\n    \"speciality\": [\r\n   1,\r\n   2\r\n    ]\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/subcontractors/42",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"subcontractors",
+						"42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create builderagency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c100655f-de72-4b58-bfce-018b5c05a9d0",
+						"exec": [
+							"pm.test(\"Successfull POST request\", function () {\r",
+							"     pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"status is Created\", function(){\r",
+							"     pm.response.to.have.property('status','Created');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"     pm.expect(pm.response.text()).to.include(\"Agency_Pointp_New\");\r",
+							"});\r",
+							"\r",
+							"var template = `\r",
+							"    <table>\r",
+							"        <tr>\r",
+							"            <th>name</th>\r",
+							"            <th>builderId</th>\r",
+							"            <th>id</th>\r",
+							"        </tr>\r",
+							"        {{#each response}}\r",
+							"            <tr>\r",
+							"                <td>{{name}}</td>\r",
+							"                <td>{{builderId}}</td>\r",
+							"                <td>{{id}}</td>\r",
+							"            </tr>\r",
+							"        {{/each}}\r",
+							"    </table>\r",
+							"`;\r",
+							"\r",
+							"// Set visualizer\r",
+							"pm.visualizer.set(template, {\r",
+							"    response: pm.response.json()\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6ab0671d-e688-422d-8ca0-6c6b1e6537b5",
+						"exec": [
+							"postman.setEnvironmentVariable('builderId','50');"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"name\": \"Agency_Pointp_New\",\r\n     \"builderId\": \"50\",\r\n    \"builderName\": \"\",\r\n    \"siren\" : \"123456789\",\r\n\"buildingCode\": \"00345\",\r\n\"statusId\": \"1\",\r\n \"address\" : \"Paris\",\r\n   \"cityId\": \"3047\",\r\n    \"type\": [\r\n    \t2\r\n       ]\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"buildersagencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create subcontractor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "575d29b2-dc67-4832-be95-6e6a92eaf6c6",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"tests[\"Body is not empty\"] = (responseBody!==null || responseBody.length!==0);",
+							"",
+							"pm.test(\"Check statusId equals to 8\", () =>{",
+							"    var jsonData = pm.response.json()",
+							"    for (i = 0; i < jsonData.content.length; i++){",
+							"        pm.expect(jsonData.content[i].statusId).to.equal('8')",
+							"    }",
+							"})",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\t\r\n{\r\n  \"name\": \"Subcontractor_New\",\r\n  \"statusId\": \"8\",\r\n  \"siren\": \"123456789\",\r\n  \"buildingCode\": \"00345\",\r\n  \"address\": \"Paris\",\r\n  \"cityId\": \"3050\",\r\n  \"speciality\": [\r\n    1,\r\n    2,\r\n    3\r\n  ]\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/subcontractors",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"subcontractors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Link builder agency to subcontractor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a02891ca-b103-4a23-b26f-97e25c6c8d0b",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"Created\");",
+							"});",
+							"",
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies/106/subcontractors/39",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"buildersagencies",
+						"106",
+						"subcontractors",
+						"39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a link for builderagency subcontractor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44c10c17-1012-4355-b378-442fb93ed03a",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"No Content\");",
+							"});",
+							"",
+							"tests[\"Body is empty\"] = (responseBody = null || responseBody.length ===0);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies/106/subcontractors/39",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"buildersagencies",
+						"106",
+						"subcontractors",
+						"39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create builder agency  contact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed1b88d5-2742-4fc5-b211-bee05e14090f",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Firstname is present\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"firstname\");",
+							"});",
+							"pm.test(\"Lastname is present\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"lastname\");",
+							"});",
+							"pm.test(\"Function is available\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"function\");",
+							"});",
+							"pm.test(\"Phone is available\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"phone\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n  \"firstname\": \"Pooja\",\r\n  \"lastname\": \"Jadhav\",\r\n  \"function\": \"Admin\",\r\n  \"email\": \"rachana@test.co\",\r\n  \"phone\": \"1234567891\"\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies/29/contact",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"buildersagencies",
+						"29",
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit builder agency contact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8577fcbb-f0a5-4d90-8f27-fd776fe66e88",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"fisrtname verified ok\", () =>{",
+							"    var jsonData = pm.response.json();",
+							"    for (i = 0; i < jsonData.content.length; i++){",
+							"        pm.expect(jsonData.content[i].fisrtname).to.equal('pooja');",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"id verified ok\", () =>{",
+							"    var jsonData = pm.response.json();",
+							"    for (i = 0; i < jsonData.content.length; i++){",
+							"        pm.expect(jsonData.content[i].id).to.equal('100');",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"phone verified ok\", () =>{",
+							"    var jsonData = pm.response.json();",
+							"    for (i = 0; i < jsonData.content.length; i++){",
+							"        pm.expect(jsonData.content[i].phone).to.equal('1234456789');",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n  \"firstname\": \"pooja\",\r\n  \"lastname\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarrrraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarrrr\",\r\n  \"function\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarrrr\",\r\n  \"email\": \"pp@gmail.com\",\r\n  \"phone\": \"1234456789\"\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/buildersagencies/14/contact/100",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"buildersagencies",
+						"14",
+						"contact",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get proposition",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d474f513-67e1-468f-a1b5-ea6dd71d68ad",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Success\");",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"",
+							"",
+							"//match id in array ",
+							"pm.test(\"Matches id property value\", () =>{",
+							"   _ .each(pm.response.json(),(arrItem)=>{",
+							"        if (arrItem.id === '227'){",
+							"          throw new Error('Array contains ${arrItem.id}');",
+							"        }",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Matches subcontractorName property value\", () =>{",
+							"   _ .each(pm.response.json(),(arrItem)=>{",
+							"        if (arrItem.subcontractorName === 'Company_testpp'){",
+							"          throw new Error('Array contains ${arrItem.subcontractorName}');",
+							"        }",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/propositions?limit=100&offset=1",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"propositions"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch cities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5de14ba9-7f89-4e8a-8909-304f54c9f903",
+						"exec": [
+							"pm.environment.set(\"variable_key\", \"variable_value\");",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Matches id property value\", () =>{",
+							"   _ .each(pm.response.json(),(arrItem)=>{",
+							"        if (arrItem.id === '2049'){",
+							"          throw new Error('Array contains ${arrItem.id}');",
+							"        }",
+							"    });",
+							"});",
+							"",
+							"pm.test(\"Matches zipcode property value\", () =>{",
+							"   _ .each(pm.response.json(),(arrItem)=>{",
+							"        if (arrItem.zipcode === '01400'){",
+							"          throw new Error('Array contains ${arrItem.zipcode}');",
+							"        }",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/cities?limit=5000&offset=0",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"cities"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5000"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get builders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0319c3b-b1c8-4fdd-92d4-91e928704127",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Matches city property value\", () =>{",
+							"   _ .each(pm.response.json(),(arrItem)=>{",
+							"        if (arrItem.cityId === '3047'){",
+							"          throw new Error('Array contains ${arrItem.cityId}');",
+							"        }",
+							"    });",
+							"});",
+							"pm.test(\"Matches type property value\", () =>{",
+							"   _ .each(pm.response.json(),(arrItem)=>{",
+							"        if (arrItem.type === \"Maître d'Ouvrage\"){",
+							"          throw new Error('Array contains ${arrItem.type}');",
+							"        }",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/builders?offset=0&limit=4000",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"builders"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "type",
+							"value": "Maître d'Ouvrage",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "2LM CONSTRUCTION",
+							"disabled": true
+						},
+						{
+							"key": "siret",
+							"value": "45156575800000",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "4000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get references",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "81818890-8218-42cb-8020-d4d4c57e809d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"optiStatuses\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"builderTypes\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"propositionStatuses\");",
+							"});",
+							"",
+							"pm.test(\"Matches id property value\", () =>{",
+							"   _ .each(pm.response.json(),(arrItem)=>{",
+							"        if (arrItem.id === '5'){",
+							"          throw new Error('Array contains ${arrItem.id}');",
+							"        }",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token_N}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://opticlient.mutlp.test.pointp.saint-gobain.net/api/references",
+					"protocol": "https",
+					"host": [
+						"opticlient",
+						"mutlp",
+						"test",
+						"pointp",
+						"saint-gobain",
+						"net"
+					],
+					"path": [
+						"api",
+						"references"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessToken",
+				"value": "{{Token_national}}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0c37cb31-dc9b-4e3b-9435-3ef0765b9766",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3f6afb61-7f0c-4afb-befd-6bacbfc021a4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
